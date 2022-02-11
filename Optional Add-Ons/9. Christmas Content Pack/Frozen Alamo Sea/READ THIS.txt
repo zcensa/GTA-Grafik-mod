@@ -1,0 +1,3 @@
+This is a FiveM Server Side Resource. You cannot use the Frozen Alamo Sea add-on without adding it to a server. 
+
+Ask your local FiveM server administrator if they can add this resource to the server you play on.
