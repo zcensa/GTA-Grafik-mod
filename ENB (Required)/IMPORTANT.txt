@@ -1,0 +1,5 @@
+You must have your in-game GTAV PostFX settings on "Very High" or "Ultra" in order for all of the ENB shaders included in 
+this package to work properly.
+
+See here:
+https://i.imgur.com/Xhk70MJ.png
