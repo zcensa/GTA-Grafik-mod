@@ -1,0 +1,1 @@
+The "nve_props" folder contains a FiveM Server Side Resource. It will let you add our breakable props to your server.
