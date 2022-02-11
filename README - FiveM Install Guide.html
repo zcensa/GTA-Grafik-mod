@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<link rel="icon" type="image/png" href="https://i.imgur.com/VgR5wIG.png">
+
+		<title>NaturalVision Evolved - FiveM Install Guide</title>
+
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,600i" rel="stylesheet"> 
+		
+		<style type="text/css">
+		* {
+			font-family: "Open Sans";
+		}
+
+		body {
+			height: 1080px;
+			margin: 6em 2em 2em 2em;
+		}
+
+		body:before {
+			content: '';
+			position: fixed;
+			top: 2%;
+			right: 3%;
+			height: 100px;
+			width: 100px;
+			background-size: contain;
+			z-index: 10;
+			opacity: 0.1;
+		}
+
+		b {
+			font-weight: 600 !important;
+		}
+
+		button {
+			padding: 0.6em;
+			border-radius: 3px;
+			border: 2px solid #fb97bf;
+			margin-left: 2em;
+			background: rgba(0,0,0,0.05);
+			transition: 0.4s;
+		}
+
+		button:hover {
+			background: #fff;
+			transition: 0.4s;
+		}
+		
+		button2 {
+			padding: 0.6em;
+			border-radius: 3px;
+			border: 2px solid #747c93;
+			margin-left: 2em;
+			background: rgba(0,0,0,0.05);
+			transition: 0.4s;
+		}
+
+		button2:hover {
+			background: #fff;
+			transition: 0.4s;
+		}
+
+		#content {
+			max-width: 1062px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		h1, h2, h3, h4 {
+			font-weight: 600;
+		}
+
+		h1 {
+			position: fixed;
+			background: -webkit-linear-gradient(top, #FC9DC3 100%, rgba(255,255,255,0));
+			background: -moz-linear-gradient(top, #FB95BE 100%, rgba(255,255,255,0));
+			background: -ms-linear-gradient(top, #FC9DC3 100%, rgba(255,255,255,0));
+			background: -o-linear-gradient(top, #FC9DC3 100%, rgba(255,255,255,0));
+			color: #ffffff;
+			width: 100%;
+			opacity: 0.98;
+			height: 40px;
+			padding: 10px 10px 10px 1em;
+			left: 0;
+			top: 0;
+			margin: 0;
+			z-index: 1;
+		}
+
+		h1 img {
+			height: 40px;
+			vertical-align: middle;
+			margin-bottom: 8px;
+		}
+
+		h2.heading {
+			margin-bottom: -10px;
+		}
+
+		h3 {
+			font-size: 130%;
+		}
+
+		h4.sub {
+			margin-top: -7px;
+		}
+
+		a { 
+			color: rgba(0, 56, 182, 0.9); 
+			transition: 0.3s;
+			text-decoration: none;
+		}
+
+		a:hover { 
+			color: rgba(226, 0, 0, 1); 
+			text-decoration: underline;
+		}
+
+		pre {
+			background: rgba(0,0,0,0.05);
+			font-family: "Verdana";
+			font-size: 14px;
+			margin-left: 2em;
+			padding: 5px;
+			/*border-left: 6px solid #00980e;
+			border-top: 1px solid #00980e;
+			border-right: 1px solid #00980e;
+			border-bottom: 1px solid #00980e;*/
+			border-left: 4px solid #FC9DC3;
+			border-radius: 5px;
+			white-space: pre-wrap;
+		}
+
+		.faq pre {
+			margin-bottom: 2em;
+		}
+
+		.thankyoubox {
+			background-color: rgba(0,0,0,0.05);
+			padding-top: 3%;
+			padding-bottom: 3%;
+			background:
+				linear-gradient(
+					to left, 
+					rgba(92,20,8,1) 0%,
+					rgba(134,40,29,1) 12%,
+					rgba(255,158,196,1) 47%,
+					rgba(84,8,0,1) 100%
+				)
+				left 
+				bottom
+				#F2F2F2    
+				no-repeat; 
+			background-size: 100% 5px;
+			border-radius: 15px;
+		}
+
+		.button {
+			width: 32px;
+			height: 32px;
+			cursor: pointer;
+			outline: none;
+			color: #fff;
+			background-color: #4CAF50;
+			margin-left: 0;
+			margin-top: -1em !important;
+			position: absolute;
+			top: 26px;
+			right: 64px;
+		}
+
+		.button:hover {
+			background-color: #3e8e41
+		}
+
+		.hilight {
+			color: #2752ce;
+		}
+
+		.indented {
+			padding-left: 2em;
+		}
+
+		.underlined {
+			text-decoration: underline;
+		}
+
+		i {
+			padding-right: 2px;
+		}
+
+		.playbtn {
+			background: rgba(0,0,0,0) url(https://b.catgirlsare.sexy/2Lh4.png) !important;
+			transition: 0.4s;
+		}
+
+		.stopbtn {
+			background: rgba(0,0,0,0) url(https://b.catgirlsare.sexy/pHiR.png) !important;
+			transition: 0.4s;
+		}
+
+		.playbtn, .stopbtn {
+			opacity: 0.6;
+		}
+
+		.playbtn:hover, .stopbtn:hover {
+			opacity: 1.0 !important;
+		}
+		button.devnotes {
+		background-color: #e4e4e4;;
+		color: #1c00ab;
+		cursor: pointer;
+		width: 48%;
+		border: 1px;
+		text-align: left;
+		outline: 1px;
+		font-size: 15px;
+		transition: 1.0s;
+		}
+
+		button.devnotes.active, button.devnotes:hover {
+		background-color: #FC9DC3; 
+		color: #ffffff;
+		}
+
+		div.panel {
+		padding: 0 18px;
+		display: none;
+		background-color: white;
+		}	
+
+		hr.style1 {
+			border-top: 1px dashed #474646;
+			border-bottom: 1px dashed #fff;
+		}
+		
+		hr.style2 { 
+		border: 0; 
+		height: 1px; 
+		background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+		background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+		background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+		background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+		}
+		
+		hr.style3 { 
+		height: 30px; 
+		border-style: solid; 
+		border-color: #8c8b8b; 
+		border-width: 1px 0 0 0; 
+		border-radius: 20px; 
+		} 
+		hr.style3:before { 
+		display: block; 
+		content: ""; 
+		height: 30px; 
+		margin-top: -31px; 
+		border-style: solid; 
+		border-color: #8c8b8b; 
+		border-width: 0 0 1px 0; 
+		border-radius: 20px; 
+		}		
+		</style>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>		
+
+		<script type="text/javascript">
+			var currentState = "playing";
+			var playingState = "playing";
+			var pausedState = "paused";
+
+			function updateMyState() {
+				var elem = document.getElementById("scbutton");
+
+				console.log("NVE" + elem);
+
+				if (currentState == playingState) {
+					currentState = pausedState;
+					elem.setAttribute("class", "button stopbtn");
+				} else {
+					currentState = playingState;
+					elem.setAttribute("class", "button playbtn");
+				}
+			}
+		</script>
+
+		<base target="_blank">
+	</head>
+	<body>
+		<div id="content">
+		<center>
+			<h1>
+				<img src="https://i.imgur.com/LCzK4e4.png"> 
+				NaturalVision Evolved - FiveM Install Guide
+				<button class="button playbtn" id="scbutton" type=submit onclick="updateMyState();" style="outline:none; background-color: Transparent;  border: none;"></button>
+			</h1>
+			
+			<!--
+			<iframe width="900" height="485" src="https://www.youtube.com/embed/Irx-27XTON8" frameborder="0" allowfullscreen></iframe>
+			</center>
+		
+			<br />
+		
+			<script src="https://apis.google.com/js/platform.js"></script>
+
+			<div class="g-ytsubscribe" data-channel="worst" data-layout="default" data-count="hidden"></div> 
+			-->
+		<iframe width="900" height="485" src="https://www.youtube.com/embed/-S24gQntcWg?hd=1" frameborder="0" allowfullscreen></iframe>
+		</center>
+		
+<h2 class="heading">Description</h2>
+<hr size="4" color="#000000">
+This package will let you use NVE on FiveM without any hassle.<br /><br />
+Please make sure your FiveM "<b>mods</b>" folder does not contain any other graphical mods.<br /><br />
+Delete any old graphical mods from FiveM before proceeding with this install.
+
+		<h2 class="heading">Update Notes</h2>
+		<hr size="4" color="#000000">	
+		<h4>June 30th, 2021</h4>
+		<pre>
+• Modified over 130 road signs throughout the countryside in order to make them reflective during night time
+• Added a new high-quality corona / lens flare texture for street lights at night
+• Added a new shaved Palm tree and new medium Palm tree with improved textures, proper vertex paint and LOD models as part of the vegetation overhaul
+• Added new hedges around the entire Los Santos Golf Course and completed the hedges around Michael's home
+• Completed the Vespucci Beach sand overhaul. Added more high-resolution sand textures with parallax mapping and LODs
+• Added tree reflections to vehicles and glass in Rockford Hills and the surrounding area. Includes garland light reflections in the Portola Drive area. Quality may improve in the future. This will be further completed in future updates in order to support the entire map. (WIP)
+• Improved blood splatter and damage wound decals. Bullet wounds soak properly on clothing. Blood pools up more slowly and realistically. Exit wounds work properly now. This will be further improved in future updates (WIP)
+• Adjusted the sky color in Extrasunny, Clear and Neutral weathers in Los Santos
+• Slightly increased the fog distance in Overcast, Extrasunny, Clear and Neutral weathers
+• Improved light pollution during night time in Los Santos using a new method. This will be further improved in future updates (WIP)
+• Added various new neon and animated lights throughout Los Santos. New locations include Maze Bank tower crown (Downtown LS), IAA / FIB building rooftops (Downtown LS), Clappers sign (Downtown Vinewood), Vinewood Liquor (Downtown Vinewood), Liberty Style Pizza w/ visible interior (Downtown Vinewood), Rockford Hills City Hall (Burton), City Hall Tower (Alta) and LSIA Theme Building (Los Santos International Airport)
+• Improved the countryside lighthouse emissive light and added a point light which casts rays through the glass
+• Modified and improved street lights near the Los Santos International Airport area and Portola Drive area. Additionally improved lights inside various parking garages located in Los Santos
+• Fixed various issues with street lights in the FiveM package
+• Improved the emissive intensity and duration of fireworks launched with the Firework Launcher weapon
+• Reduced corona intensity on the flare gun. 
+• Added a new high-quality vehicle dirt texture (WIP)
+• Added new high-quality parallaxed roads to Portola Drive & Burton for Platinum Supporters as part of the roads overhaul (WIP)
+• Adjusted the color of headlights on the Glendale and removed headlight coronas from the Glendale, Rhapsody, Pigalle and Blade vehicles
+• Disabled the "services_nightlight" timecycle modifier in order to prevent yellow night lights in parts of the countryside
+• Improved the smoothness of various lights around the city including lights emitting from vending machines and the colored tubes at LSIA
+• Improved lighting inside the Metro Subway interiors located near the Rockford Plaza and across the street from Bahama Mamas
+• Removed collision from the custom traffic sign props in the altV and RageMP packages as requested by users
+• Updated ENB presets and shaders with slight adjustments
+• Misc bug fixes and tweaks
+
+
+<b>Known Issues:</b>
+- Some hedges currently do not have their collision removed. This will be completed in the future.
+- Laser lights glitch out and flicker at certain angles. This will be fixed in the future once we have a solution.
+- Farthest LOD on the Olive Tree model is still using the vanilla tree. This will be fixed in the future.
+- Farthest LOD models on trees in locations with vegetation reflections look weird. This will be fixed in the next update.
+- Farthest LOD models for Vespucci Beach sand are not present. This will be fixed in the next update.
+</pre>
+
+		<div id="hidden" style="display:none">
+		<h4>May 31st, 2021</h4>
+		<pre>
+• Improved water color in most swimming pools throughout a number of homes, apartments and hotel locations in Vinewood Hills, Rockford Hills, Vespucci Beach and Downtown Los Santos. Comes with brand new night lighting for pools. Colors vary throughout each location. More locations will have lights added to them over time
+• Increased directional shadow draw distance during night time in each weather
+• Added a new large Cedar tree, small Cedar tree and new desert Sage plants with improved textures, proper vertex paint and LOD models as part of the vegetation overhaul. Additionally fixed LOD texture mipmap levels for each Cedar tree from previous updates
+• Added new hedge bushes around Rockford Hills and Michael's Home as part of the vegetation overhaul
+• Reworked the large Oak Tree model with improved textures, proper vertex paint and LOD models as part of the vegetation overhaul. Now it looks better during Overcast and Rain weathers
+• Added the optional Darker Nights add-on and Parallax Roads for Grove Street / Chamberlain and Downtown Los Santos to the main package for Gold Supporters
+• Improved performance for the Darker Nights add-on in FiveM
+• Added various new neon and animated lights across the map. New locations include the colorful Parking Garage lights (North Rockford Dr), Pawn Shop (Downtown Vinewood), Motel sign (Alta), 24-7 sign (Little Seoul), Fame or Shame sign (East Vinewood), Metro Subway lights (Single Player Only) and Barber Shop pole (Exterior - Only select locations in Los Santos), 
+• Added a variety of new road traffic and tunnel props around the map. Locations include Downtown Los Santos (Freeway next to Pillbox Hospital), North Chumash / Great Ocean Highway, Great Chaparral, Grand Senora Desert (Freeway) and El Burro Heights
+• Added light emitters to Glow Sticks and Parking Wand models when using them outside of a Single Player scenario. Works properly in FiveM, RageMP and altV
+• Improved the lighting inside Metro Subway interiors and fixed the intensity of emissive billboard lights
+• Added a new "Low" intensity setting for the Brighter Emergency Lights add-on in FiveM
+• Added brand new high-resolution beach textures for sand and promenade pavement with parallax mapping. Currently only 40% done and covers half of the beach area. Will be further improved and fully completed by the next update (WIP)
+• Removed collision from the volleyball nets located in Vespucci Beach and added wind movement to the nets
+• Added a new vehicle exhaust backfire effect (WIP)
+• Added a slightly exaggerated effect with leaves flowing throughout Paleto Forest
+• Added new weapon enhancements ranging from realistic muzzle effects to bullet shell casings falling on the floor instead of disappearing like vanilla. Supports all weapons in Single Player and only certain weapons in other packages. Comes as an optional add-on in FiveM (WIP)
+• Increased the life duration of footprint decals before they disappear
+• Slightly improved bullet / footprint decal textures and adjusted the size of the bullet decal parallax effect
+• Added new high-quality parallaxed roads to Downtown Vinewood for Platinum Supporters as part of the roads overhaul (WIP)
+• Improved lights in various tunnels throughout Blaine County. Additionally improved some of the night lights near the Vespucci Canals
+• Fixed an issue with peds spawning frozen in a parking lot near Downtown Vinewood
+• Added new parallax textures to the walking path in Rockford Hills near the Schlongberg Sachs building
+• Slightly increased the visibility of water foam in all weathers
+• Improved blending between the underwater timecycle and above water timecycle
+• Updated ENB presets and shaders with slight adjustments
+• Misc bug fixes and tweaks
+</pre>
+		
+		<h4>May 2nd, 2021</h4>
+		<pre>
+• Fixed an issue with missing building textures affecting certain locations in FiveM
+• Improved performance for the street lights add-on in FiveM
+• Reworked all hedge models for improved compatibility
+• Fixed an issue with the deer skin texture
+• Made several improvements to parallax roads in Downtown Los Santos for Platinum Supporters
+• Removed the "NVE_props" rpf from the FiveM Package due to syncing issues. It is now a FiveM resource within the 'Optional Add-Ons' folder
+</pre>
+		
+		<h4>April 30th, 2021</h4>
+		<pre>
+• Updated the Foggy weather with improved lighting and atmosphere during all hours of the day and night
+• Improved night time lighting in Overcast weather and slightly adjusted the tonemapping
+• Created a temporary Cloudy weather with edited vanilla clouds. This will be completely remade once volumetric clouds are finished
+• Improved fur, textures and materials on various animals. These include the Boar, Rabbit, Chop, Poodle, Husky, Mountain Lion, Coyote, Cat, Deer, Westy, Shepherd and Rottweiler
+• Added a spawn location for Rabbits around Grapeseed with new carrot props placed within the dirt
+• Added new rock models, textures and placement around the shore line near the Alamo Sea / Sandy Shores area with high-quality textures
+• Added new birch trees and a new large bush with improved textures, proper vertex paint and LOD models as part of the vegetation overhaul
+• Added new yellow flowers and plants around the desert region with improved textures, proper vertex paint and LOD models as part of the vegetation overhaul
+• Added various animated lights and signs across the map. New locations include The Hen House (Paleto Bay), Motel (Paleto Bay), Famous Hamburgers (Paleto Bay), Akan Records (Rockford Hills), Cockatoos Nightclub (Hawick Avenue), Spitroasters Meathouse (West Vinewood), Blazing Tattoo (Vinewood Boulevard) and Vinewood Video (Vinewood Boulevard)
+• Added new neon lights, emissive signs and volumetric lighting effects to the RON gas station in Paleto Bay
+• Fixed an issue with moveable gas pumps at Xero gas station locations
+• Adjusted the laser lights around the Maze Bank Arena to shift between a blue and purple hue
+• Added the sound of muffled music coming from within The Hen House club in Paleto Bay
+• Added a new dlcpack labeled 'NVE_props' with breakable props. Spawns a brick wall around the construction site in Los Santos (Alta) along with a custom scenario that will randomly occur. In this scenario, an NPC will drive their car through the newly-cemented brick wall and break through it. Players can shoot through this wall and watch it slowly collapse. Also added breakable road barriers around the stunt jump location in Downtown Los Santos / Pillbox Hill (Early WIP)
+• Reduced the volumetric intensity of flickering lights in backalleys around South Los Santos
+• Fixed an issue with the "New Street Lights" add-on for FiveM and updated it with new lights. No more crashes or weird props
+• Added an electric current effect emitting from broken traffic lights
+• Updated the star field model and texture with a higher resolution texture. Removed the Milky Way Star Field and removed the Alternate Star Field add-on in preparation for a new feature in a future update
+• Removed the depth of field effect from the Del Perro Fwy tunnel and the Mission Row Police Station
+• Added new high-quality parallaxed roads to Downtown Los Santos for Platinum Supporters as part of the roads overhaul (WIP)
+• Added a custom timecycle modifier to reduce haze during Foggy weather at night in Paleto Bay
+• Removed duplicate vegetation files from the 'NVE' dlcpack and moved all vegetation files into the 'NVE_vegetation' dlcpack
+• Updated the "Darker Nights (Experimental)" add-on for Platinum Supporters with support for Smog, Overcast and Cloudy weathers (WIP)
+• Fixed an issue with the impact decal height texture and reduced the size of bullet impact on glass
+• Added a custom timecycle modifier to fix exposure levels inside the Bean Machine interior (Downtown LS) in FiveM
+• Updated ENB presets and shaders with slight adjustments
+• Misc bug fixes and tweaks
+</pre>
+		
+		<h4>April 2nd, 2021</h4>
+		<pre>
+• Fixed an issue with the rain drop lens effect not working for some users in FiveM
+• Fixed an issue with missing collision at the Rockford Hills City Hall in FiveM
+• Fixed an issue with parts of the map missing in Single Player when using LSPDFR with RAGEPluginHook
+</pre>
+		<h4>March 31st, 2021</h4>
+		<pre>
+• Added new street lights and wall lights with lod lights throughout the entire map. Each light has been completely reworked and modified by hand in order to offer a more realistic and complete feel that brings the city to life during the night. Each street light and wall light now has an increased specular range in order to make vehicle and pavement reflections look better during night time. Various neighborhoods, tunnels, bridges, underpasses, parking lots and other areas were fine-tuned and are now lit up properly. Fixed several bugs with flickering lights in the process (WIP)
+• Removed the "Decreased Vanilla Street Lights" add-on and the "New Street Lights" add-on since street lights were completely reworked and added to the main mod
+• Added volumetric headlights to most vehicles in single player. Volumetric intensity changes per weather. Volumetric headlight distance and number of cars can be adjusted in real-time (See the readme for more details)
+• Improved the Del Perro Fwy tunnel by reworking several models to add new reflecting ceiling lights, parallaxed wall textures and new lights to the freeway sign
+• Added new laser lights to downtown Los Santos and around the Maze Bank Arena. The lights at downtown are animated and rotate
+• Added new pine trees and cedar trees with improved textures, proper vertex paint and LOD models as part of the vegetation overhaul
+• Added new hedge bushes around several locations including Rockford Hills, Rockford Hills City Hall and Burger Shot (San Andreas Avenue), along with new flowers around the Rockford Hills sign as part of the vegetation overhaul
+• Added new high-quality parallaxed roads to the Grove Street & Chamberlain neighborhoods for Platinum Supporters. Includes plenty of small details such as cracked decals with collision that forms puddles and much more (WIP)
+• Added new high-quality parallaxed textures outside Franklin's Aunt's house on Forum Drive and to the nearby pavement
+• Fixed an issue with a misaligned road decal near Pillbox Hill
+• Added a rain drops lens effect for Rain and Thunder weathers. Only works in third-person camera mode in those two weathers. The effect is disabled inside interiors. Works in FiveM, RageMP and altV too. Effect can be toggled on and off within the ENB menu. Includes a variety of settings to customize the effect (WIP)
+• Modified power lines on telegraph poles in several neighborhoods to appear thinner. Added wind movement to the shoes hanging on top of power lines
+• Added a variety of flickering street lights and wall lights scattered throughout the South Los Santos back-alleys for an enhanced atmosphere (WIP)
+• Added various animated lights and signs across the map. New locations include Bishop's WTF?! (Vinewood Boulevard), Singleton's (Downtown Vinewood), Lucky Pluck (Strawberry Avenue) and Premium Deluxe Motorsport (Power Street)
+• Added neon lights with a retro aesthetic to the Up-n-Atom diner near Procopio Beach in Blaine County and to Casey's Diner on Popular Street in Los Santos
+• Added emissive lights and new point lights to the Weazel News Building (Little Seoul), Pipeline Inn (Pacific Bluffs), Beach Homes (Del Perro / Pacific Bluffs), Maze Bank Sign (Downtown Los Santos), Maze Bank Arena Sign (La Puerta), Davis Courts Building Monument (Davis) and Ten Cent Theater (Pillbox Hill)
+• Added parallax windows during night time to the beach homes near Del Perro & Pacific Bluffs
+• Added a custom timecycle modifier to fix exposure levels inside the Vultur Lé Culturé interior in FiveM
+• Removed collision files for the custom car showroom near Portola Drive in order to prevent players from falling through the map in FiveM
+• Added the "Darker Nights (Experimental)" add-on for Platinum Supporters that makes night time extremely dark around the map (WIP)
+• Reduced the intensity of lights on the Maze Bank skyscraper during night time in Downtown Los Santos
+• Reduced fog density in Paleto Bay and the nearby forest region
+• Reduced overly bright emissive window intensity for various restaurants in South Los Santos
+• Removed procedural grass shadows in order to improve FPS during night time in certain locations. These are disabled in vanilla by default
+• Removed leftover test animated signs floating on top of the Ammunation parking lot in Downtown Los Santos
+• Removed two palm trees that were blocking the target view during the mission "Nervous Ron"
+• Updated ENB presets and shaders
+• Misc bug fixes, tweaks and adjustments
+</pre>
+		
+		<h4>March 4th, 2021</h4>
+		<pre>
+• Fixed an issue with "b_NVE_Vanilla_Map.rpf" causing crashes in FiveM
+• Fixed an issue with "e_New_Street_Lights.rpf" not fully working in FiveM
+• Fixed an issue with "o_NVE_Animated_Lights.rpf" not fully working in FiveM
+• Created a separate .rpf for Sandy Shores Palms (p_NVE_Sandy_Shores_Vegetation.rpf) in the FiveM package. Now you can use "p_NVE_Vegetation.rpf" without adding Sandy Shores Palms if you wish to do so
+</pre>
+
+		<h4>February 28th, 2021</h4>
+		<pre>
+• Fixed an issue with dark LOD textures on global roads after installing the "Parallax Roads for Downtown LS and the Airport Runways" add-on
+• Fixed an issue with missing textures caused by the "New Street Lights" add-on in FiveM
+• Moved two palm trees in Sandy Shores that were previously blocking a custom helipad prop in FiveM
+• Removed animated test props from the roof of the Ammunation building in Downtown Los Santos
+• Removed the custom Sandy Shores palm trees from the altV package due to user complaints
+</pre>
+
+		
+		<h4>February 28th, 2021</h4>
+		<pre>
+• Updated the Rain weather with improved lighting, reflections and better rain particle effects
+• Added four new types of desert palm trees and placed them around Sandy Shores and the nearby desert region as part of the vegetation overhaul. These palm trees have high-quality textures, proper vertex paint and LOD models
+• Added new hedge bushes around Rockford Hills & Burton near the Mount Zonah Medical Center / Rockford Mall as part of the vegetation overhaul. Players will experience loss of balance or pushback when walking through hedges (WIP)
+• Added new neon lights and volumetric lighting effects with a retro aesthetic to all three Xero gas stations across Los Santos, along with a brand new animated Xero 'X' logo sign. Includes proper LOD lights and LOD reflections
+• Added various animated lights and signs across the map. New locations include The Boat House (Sandy Shores), Burger Shot (Near Vespucci Canals), Lucky Pluck (Little Seoul), Up-n-Atom (West Vinewood), Blue Neons (Corner of Pillbox Hill / Integrity Way), Fame or Shame sign (La Puerta), Liquor & Grocery Store (Sandy Shores) and the Beer & Wine Liquor Store (Jamestown St)
+• Added new runway lights with LOD lights at the Los Santos airport. Fixed several issues with missing runway lights due to decals overlayed on top of the lights (This was a vanilla issue)
+• Added a custom timecycle modifier for the Burger Shot restaurant located near the Vespucci Canal in order to fix exposure levels in FiveM
+• Added a custom timecycle modifier along the Los Santos shorelines in order to balance out the intensity of reflections during sunrise 
+• Added new high-quality parallax roads to various parts of downtown Los Santos and the runways at the Los Santos airport for Platinum Supporters (WIP)
+• Added support for vehshare.ytd in FiveM, RageMP and altV—meaning the new vehicle burn textures from previous updates will now work
+• Reduced the green tint on vehicle windows / glass caused by headlights during night time
+• Slightly increased the tail light intensity of vehicles
+• Reduced emissive intensity for the animated sign on top of the Badger Tower during night time
+• Modified the emissive window lights in downtown Los Santos to turn on at 21:00 instead of 20:00 and enabled the Maze Bank logo emissive to be turned on during all hours
+• Improved emissive window textures on some of the high-rise buildings in downtown Los Santos
+• Modified the zenith sky colors to reduce cyan levels in ExtraSunny, Clear and Neutral weathers between 7:00 and 20:00 (LS & Blaine County)
+• Reduced PostFX noise intensity in Halloween weather for a clearer image
+• Adjusted the "vfxlightning_intensity_mult" variable in each weather in order to provide smoother transitions to and from Thunder weather
+• Fixed various issues with boundary boxes related to missing shadows cast by vegetation
+• Fixed a bug that would randomly cause the game to crash in Single Player while flying high in the air in Los Santos
+• Fixed an issue with missing spoilers on the Pariah vehicle after the Cayo Perico update
+• Added volumetric lights inside the train tunnel near Mirror Park
+• Added a separate toggle for 'Depth Mask' within the Depth Mask / Green Screen ENB shader which restores the Depth Map effect
+• Updated the ENB d3d11.dll file with compatibility for altV and updated all ENB presets
+• Misc bug fixes, tweaks and adjustments
+
+<b>Known Issues:</b>
+- Collision placement is not proper with the Oive Tree model. This will be fixed in the future. It will take time to fix this because we have to edit dozens of .ybn files.
+- Farthest LOD on the Olive Tree model is still using the vanilla tree. This will be fixed in the future.
+</pre>
+
+		<h4>January 31st, 2021</h4>
+		<pre>
+• Re-enabled bullet tracers in FiveM as requested by various users
+• Removed the edited Luxury Autos and Mount Zonah Medical Center buildings from the FiveM, RageMP and altV packages
+• Removed the edited small building in East Vinewood / Mirror Park from the FiveM, RageMP and altV packages
+• Fixed an issue with missing character clothing in RageMP and altV
+• Fixed an issue with missing textures caused by the "New Street Lights" add-on in FiveM
+• Fixed an issue with large visible particles on the ground after a weather transition to Rain in FiveM (Caused by a vSync add-on issue on servers)
+• Removed the "enbhelper.dll" plugin from the enbseries folders due to a random crashing issue
+</pre>
+		
+		<h4>January 30th, 2021</h4>
+		<pre>
+• Added a new lens flare texture and effect for the sun. Only visible with the third-person camera
+• Added a new large tree and two large bushes with improved textures, proper vertex paint and LOD models as part of the vegetation overhaul
+• Added various animated lights and signs across the map. New locations include Bahama Mamas, Maze Bank Arena, Hands On Car Wash (South LS), Ammunation (Downtown LS), Rob's Liquor locations, Vinewood Wax Museum, Mount Zonah Medical Center and a select number of small shops and restaurants near the Vespucci Promenade, Del Perro Pier and Paleto Bay areas
+• Reduced emissive intensity in more than a dozen logos and signs throughout Los Santos in order to make them more visible at night
+• Fixed an issue with the light model for the Ammunation shop sign in Downtown Los Santos
+• Fixed an issue with the light model at the Von Crastenburg Hotel restaurants area in Vinewood (This is a vanilla bug)
+• Improved ground and dirt textures throughout Sandy Shores via terrain blending (WIP)
+• Added new parallax textures and interior mapping to a select number of trailers in Sandy Shores (WIP)
+• Added interior mapping with a parallax effect to additional homes near Vespucci Beach (Completed)
+• Improved character clothing wetness factor in Rain weather
+• Added new parallax textures to the small building near the skate park in East Vinewood / Mirror Park
+• Slightly increased player headlight distance intensity
+• Added lights which are now emitted from the posters and signs on Bus Stops
+• Added a new interior for the Luxury Autos car showroom with vehicle spawns near Rockford Hills / Portola Drive
+• Added idle pedestrian spawns inside the Sessanta Nove interior near Rockford Hills / Portola Drive
+• Added placeholder dlcpacks for RageMP and altV (Addon1, Addon2 & Addon3) in order to allow advanced users to load their own dlcpacks
+• Added animated lights and signs support for RageMP and altV
+• Improved FiveM support for the "New Street Lights" add-on (WIP)
+• Added a custom timecycle modifier for the Mount Zonah Medical Center in order to fix exposure levels in FiveM
+• Fixed a bug causing the game to randomly crash in FiveM with the 'GTA5.exe!addLodLights' error
+• Removed bullet tracer effects from most weapons for added realism
+• Increased the smoke duration length when a bullet hits concrete
+• Fixed an issue with incorrect garland lights placement near the Casino and Bahama Mamas locations
+• Fixed a bug that caused ocean water reflections to appear black from far away at certain angles
+• Fixed a bug with glitched textures appearing on the roof of The Lust Resort building in West Vinewood (This is a vanilla bug)
+• Added the "Halloween Content Pack" to the Single Player package as an Optional Add-On
+• Added the '2075 Yaiba Kusanagi CT-3X' motorcycle in Single Player for Platinum Supporters
+• Updated the Depth Mask / Green Screen shader for ENB. Removed edge fading, added Radial Depth support and added the ability to change Green Screen color on the fly
+• Updated the ENB .dll file with improved FiveM compatibility and updated all ENB presets
+• Misc bug fixes, tweaks and adjustments
+</pre>
+		
+		<h4>December 31st, 2020</h4>
+		<pre>
+• Updated files in each package to work with the newest GTAV Title Update (v1.52)
+• Added three new Ficus Tree models with high-resolution textures, proper vertex paint and LOD models as part of the vegetation overhaul
+• Improved paint on the Oak Tree in order to reduce the brightness of leaves during dreary weathers
+• Added the 'Quadra Turbo-R V-Tech' sports car in Single Player and as an optional FiveM server resource add-on. Comes with the ability to swap license plates, vehicle spoiler and more
+• Fixed a bug that caused the game to crash during the "Three's Company" mission
+• Fixed a bug with the FiveM "Brighter Emergency Lights (LSPDFR)" add-on that caused police lights to appear dim
+• Removed neon lights from the green tunnel near Del Perro Freeway. These will be redone and remade in a future update
+• Added interior mapping with a parallax effect to the homes near Vespucci Beach (WIP)
+• Fixed an issue with the medium LOD texture being missing on the railing outside one of the Vespucci beach homes. This issue is present in vanilla GTAV
+• Added animated lights and signs to the exterior of Vanilla Unicorn and some Los Santos Customs / Auto Repair locations around the map - This is currently only available for Platinum Supporters as an experimental test
+• Added parallax mapping to the textures on the Sandy Shores Boat House building and reworked other textures
+• Fixed a tiling issue with the generic vehicle carbon texture
+• Added the "Remove All Trash Density" add-on as default for the altV and RageMP packages
+• Slightly adjusted the tonemapping in ExtraSunny and Clear weathers in order to make the overall image brighter during daytime
+• Fixed an issue that was causing dull vehicle reflections in certain parts of the map
+• Improved the intensity of siren lights on the Lifeguard and Ambulance vehicles
+• Added the 'GTAV.HeapAdjuster.asi' script into the "Main Files" folder with permission. This should prevent crashes when adding modded vehicles in single player
+• Updated the README for the Single Player Package with instructions on getting ENB to work together with RAGEPluginHook
+• Fixed an issue with the 'Christmas Content Pack' uninstaller file which caused the game to crash in Single Player
+• Updated all ENB presets and updated the enbeffect.fx file
+• Misc. adjustments and tweaks
+</pre>
+		<h4>November 30th, 2020</h4>
+		<pre>
+• Added a brand new Snow weather, Blizzard weather and Xmas weather
+• Added a heavy snow mist effect to Snow and Blizzard weathers
+• Increased the number of snow flake particles throughout all snow weathers
+• Added a new custom script called "snow.asi" that automatically enables snow when you switch to Snow, Snowlight, Blizzard and Xmas weathers using a trainer. It will disable snow in other weathers
+• Added a new Pine Tree model with new textures, proper vertex paint and LOD models as part of the vegetation overhaul
+• Added a new Shrub Bush model with new textures, proper vertex paint and LOD models as part of the vegetation overhaul
+• Fixed an issue with missing textures on the Oak Tree
+• Added a brand new optional add-on called the "Christmas Content Pack"—This Single Player & FiveM compatible add-on places various winter / christmas themed props throughout the city of Los Santos. Places such as Legion Square, Portola Drive, Franklin's Mansion, Trevor's Trailer and more locations are filled with holiday lights and decorations. It also causes the Alamo Sea to become frozen. You can walk and drive on the frozen ice
+• Removed the Digital Den building and G&P building (Pillbox Hill Location) from FiveM due to interior conflicts
+• Added neon lights to the green tunnel connecting Del Perro Freeway
+• Fixed an issue with the "Hide Weapon Reticle and Damage Overlay" add-on for FiveM that prevented the new headlight textures from the previous update from showing
+• Increased Ripple Disturb to properly show the ENB water displacement effect in all weathers
+• Slightly increased the depth of foot displacement effects (ie. Walking on sand, snow etc.)
+• Improved emergency lights on the Police Bike and Police Transporter vehicles
+• Improved emergency lights on Police vehicles used during the Prologue in Single Player
+• Added shattering glass to the roof windows on the FIB building
+• Added a subtle dust effect to the countryside during ExtraSunny weather
+• Fixed an issue causing screen blur when in first-person mode while wearing a heist mask
+• Fixed an issue with certain ambient entity effects not spawning properly (ie. Butterflies, Moths etc.)
+• Prevented dust devils from spawning in Overcast, Rain, Thunder or Snow weathers
+• Disabled Subsurface Scattering in ENB within the FiveM and RageMP packages to prevent artifacting on character models
+• Increased brightness and density of cigarette and meth smoke particles
+• Upgraded the "Mission Row Police Station" for Platinum Supporters with improved lighting and new high-resolution parallaxed textures. This add-on is FiveM compatible and includes a memorial monument placed near the back of the police station. This monument is based off of the 'LAPD Memorial to Fallen Officers'. Includes randomly selected names of long-time Platinum Supporters on the monument
+• Added wind movement to the wires attached to tower cranes in Los Santos
+• Updated all ENB presets and updated the enbeffect.fx file
+• Misc. adjustments and tweaks
+</pre>
+		
+		<h4>November 2nd, 2020</h4>
+		<pre>
+• Fixed a bug regarding improper placement of one of the new road models and decals
+• Fixed a bug with subsurface scattering in ENB and updated the ENB presets
+• Adjusted emissive intensity for vehicle headlights, brake lights, indicator lights and reversing lights
+• Removed the Vanilla Unicorn Overhaul files from the main FiveM package and created an optional add-on with the files
+• Added parallaxing to the buildings at Textile City near the train tracks
+</pre>
+		<h4>October 30th, 2020</h4>
+		<pre>
+• Updated the normal / specular maps on Palm Trees from the previous updates
+• Improved spacing of leaves and normal / specular maps on the Olive tree from the previous update
+• Added a new Oak Tree model and a new Hybrid Oak / Large Tree model with improved textures, proper vertex paint and LOD models as part of the vegetation overhaul
+• Removed old roads and added new high-quality parallax roads, detailed pavement textures and smoking manholes to the area near Sinner Street. This also fixes an issue with parallax roads showing showing a repeated texture at this location
+• Added parallax ground textures at the bench area on Palomino Avenue next to the Vespucci Liquor Market
+• Added a new detailed rug in Michael's living room with the fur shader enabled
+• Added a brand new atmospheric Halloween weather where it's always night time
+• Increased the intensity and modified the color of light rays in Foggy weather in the Countryside during 7:00, 8:00, 18:00 and 19:00
+• Modified the city volumetric light to appear more yellow instead of blue at night time
+• Updated the bloom shader and enabled it by default in ENB. This shader greatly improves emissive and spot lights during night time
+• Modified the intensity of lightning strikes in order to balance them with the new bloom shader. Lighting strikes now have a blue glow at night time when using ENB
+• Reduced the intensity of siren lights which affect the Police Cruiser (1) vehicle
+• Reduced the intensity of various billboards and emissive lights around the map that were overly bright
+• Fixed an issue where explosion.ymt was not written correctly to the game due to an error in the assembly.xml file within the Single Player Package
+• Adjusted Vehicle Headlight Angle, Player Intensity and Distance Multiplier settings for more balance between NPC and Player vehicles
+• Added new realistic headlight textures for all vehicles with proper cutoff and color bending (Thanks InfamousSabre)
+• Fixed an issue with the glass windows near the Oriental Theatre affecting vehicle burnout smoke transparency. This issue is prevent in vanilla GTAV
+• Added the Vanilla Unicorn Strip Club overhaul to the main mod
+• Added the Halloween Content Pack for Platinum Supporters. Includes various spooky Halloween props and easter eggs. Installing this add-on will enable chaos mode in the city. During chaos mode the entire city will be on fire and you will be chased by angry peds. Comes with an optional uninstaller for chaos mode.
+• Updated the ENBSeries version which include shadows for normal maps and fixes an issue with subsurface scattering being disabled
+• Updated all ENB presets and .ini files
+• Misc. adjustments and tweaks
+</pre>
+		
+				<h4>October 2nd, 2020</h4>
+		<pre>
+• Updated ENB to v0.447 which does the following:
+ - Fixes the issue with Frame Scaling / Resolution Scaling in Single Player, FiveM and RageMP
+ - Added tessellation to ocean water (EnableWater)
+ - Added the ability to change emergency vehicle light intensity under [LIGHTARTIFICIAL]
+ - Added Subsurface Scattering (SSS) to all character and pedestrian models (EnableSubSurfaceScattering)
+ - Added the 'WetnessAmount' parameter to [RAINREFLECTION] for each time of day
+</pre>
+		
+		<h4>September 30th, 2020</h4>
+		<pre>
+• Updated previously added roads with improvements to the specular texture and models
+• Added new high-quality parallax roads, pavement textures and smoking manholes to the area surrounding Legion Square as part of the roads overhaul
+• Added a new Palm Tree model and new Olive Tree model with improved textures, proper vertex paint, LOD models and tessellation as part of the vegetation overhaul
+• Added high-resolution fire, muzzle, tracer and smoke particle textures
+• Added a high-resolution texture for both the interior and exterior of burnt vehicles
+• Increased the emissive intensity, size and duration of various fire particle effects for realism purposes. Increased visibility and duration of fire ignited by shooting petrol via jerry can
+• Fixed z-placement of ember particles on campfires across the map
+• Improved vehicle explosions by increasing particles count, adjusting particles size, increasing size of explosions and modifying the duration of various explosion effects
+• Slightly increased the intensity of the shockwave effect after blowing up a vehicle
+• Increased the amount of glass fragment particles when shooting out vehicle windows. Glass fragments now stay on the ground for up to a minute
+• Added dust devils to the countryside desert location. Spawns about every five minutes in-game (Thanks Modifiver)
+• Further adjusted the global and fullbeam intensity of vehicle headlights for a more balanced look
+• Reduced the emissive intensity of lights on the Space Docker vehicle. Now it looks fine when used in combination with the "Brighter Emergency Lights" add-on
+• Removed the Crucial Fix Coffee building from FiveM due to a conflict with custom interiors used online
+• Upgraded the Vanilla Unicorn Strip Club for Platinum Supporters. Includes new high-resolution parallaxed textures, neon lights and an improved atmosphere
+• Added a new experimental Bloom shader for ENB (Check 'EnableBloom' and then edit variables under the 'Bloom' tab) - useful for screenshots
+• Updated all ENB presets and .ini files to be compatible with the newest Patreon version of ENB
+• Created a new optional add-on for FiveM called "Roads Overhaul Pack" for easy add / removal purposes
+• Fixed a bug where the game would crash when an explosion occurs at certain gas stations
+• Fixed an issue in FiveM and RageMP with the tonemapping suddenly changing in Foggy weather when you travel between Los Santos and Blaine County
+• Fixed an issue with lights not showing properly on the Sprunk banner and at the Gentry Manor hotel located in West Vinewood
+• Fixed an issue with the LOD model for the Gentry Manor hotel not showing building lights. This issue is present in vanilla GTAV
+• Fixed an issue with the LOD model and textures popping in for the Flow Water banner on the Pacific Standard bank building. This issue is present in vanilla GTAV
+• Fixed an issue with missing bark textures on new palm tree models
+• Fixed an issue with missing collisions on new palm tree models
+• Fixed an issue regarding low FPS when outside the Vanilla Unicorn strip club or the Car Wash in Strawberry while using the "New Street Lights" or "Decreased Vanilla Street Lights" add-ons
+• Fixed an issue with incorrect water reflections near the Land Act Reservoir at night time
+• Fixed an issue with the mirror floor tiling at the Little Seoul Metro Station
+• Fixed an issue with incorrect LOD textures on the boardwalk near Vespucci Beach
+• Added working support for altV once again
+• Misc. adjustments and tweaks
+</pre>
+		
+		<h4>August 31st, 2020</h4>
+		<pre>
+• Fixed an issue with the vanilla Bahama Mamas interior being overwritten in FiveM
+• Fixed an issue with black palm trees when tessellation is disabled in graphics settings
+• Fixed an issue with Smog and Foggy weather being too bright in FiveM, RageMP and altV
+• Fixed an issue with invisible crosshairs in RageMP
+• Fixed an issue with floating lights near Portola Drive
+• Enabled rain drops during the WIP Clearing weather in FiveM, RageMP and altV due to requests from players
+</pre>
+
+		<h4>August 30th, 2020</h4>
+		
+<pre>
+• Completely overhauled Thunder weather in Los Santos with improved lighting, colors and exposure
+• Improved the intensity, shape and duration of lightning strikes
+• Fixed an issue with directional lightning strikes not showing properly
+• Added new Palm Tree models and textures with proper vertex paint, LOD models and tessellation as part of the vegetation overhaul
+• Added new high-quality road and pavement textures with parallaxing at Pillbox Hill as part of the roads overhaul
+• Added smoking manhole particle effect with parallaxing and running water depth effect to the sewage vent on the road at Pillbox Hill
+• Slightly improved the sky colors during various hours in ExtraSunny, Clear, Neutral, Smog and Foggy weather
+• Increased directional light intensity in ExtraSunny, Clear and Neutral weathers
+• Slightly increased exposure throughout various weathers in order to balance out the final image
+• Reduced ocean noise amplitude in various weathers
+• Separated the single player and multiplayer NVE packages for ease of access with updated install guides
+• Removed the Bahama Mamas interior from multiplayer packages due to conflicts with other custom server side interiors within the same location
+• Reduced vignetting and updated ambient night lighting in Rain weather
+• Fixed an issue with the tonemapping in Rain weather when switching characters
+• Improved the strength and duration of rain ripples formed in puddles
+• Added a custom timecycle modifier for FiveM that reduces exposure inside Pillbox Hill Medical Center, Central Los Santos Medical Center and the Pearl Restaurant interior located at the pier. This fix will not work on servers that don't allow the NVE dlcpack
+• Modified the carcols file to slightly increase white vehicle colors
+• Increased the intensity of vehicle headlights during night time
+• Fixed reflection height at Mirror Park lake and reduced lod reflections in this area
+• Modified the range, intensity and volume size of weapon flashlights for added realism
+• Forced the NVE dlcpack rpf file to work on all RageMP servers using one simple trick
+• Added the '2005 TVR Sagaris' sports car in single player - This is currently only available for Platinum Supporters
+• Added a new ENB depth of field shader with lens distortion and anamorphic lens for screenshot purposes
+• Added a new lens ENB lens shader with anamorphic flares for screenshot purposes
+• Updated all ENB presets and .ini files
+• Misc. adjustments and tweaks to weathers and timecycle mods
+</pre>
+		
+		<h4>July 23rd, 2020</h4>
+		
+<pre>
+• Fixed an issue with emotes not syncing properly in FiveM
+• Fixed an issue with garland lights outside Bahama Mamas West (SP Only - will be fixed for FiveM in the next update)
+• Fixed an issue with bulletproof vehicles not showing damage decals properly (SP Only - will be fixed for FiveM in the next update)
+</pre>
+		
+				<h4>July 20th, 2020</h4>
+<pre>
+• Fixed an issue with vehicle reflections near Del Perro Pier and the nearby coast between the hours of 5:40am and 6:40am
+• Fixed an issue where the entrance to Bahama Mamas West had an invisible wall if you have MP Maps enabled
+• Fixed an issue where textures and garland lights near Portola Drive and Marathon Avenue were misplaced if you have MP Maps enabled
+• Fixed an issue where the screen would become dark near the Eclipse Towers in RageMP / altV
+• Removed the modified Maibatsu Motors building model from FiveM due to conflict with a custom interior
+• Added the "New Street Lights" and "Brighter Emergency Lights" add-ons by default to RageMP / altV
+• tcBox crash should now be fixed in FiveM
+</pre>
+		
+				<h4>July 16th, 2020</h4>
+<pre>
+• Modified the sky colors to reduce cyan levels in ExtraSunny and Neutral weathers between 7:00 and 20:00 (Los Santos)
+• Reduced sun size and improved the sunset transition between 19:00 and 20:00 in ExtraSunny, Clear and Neutral weathers (Los Santos)
+• Reduced the size of ocean waves and shore waves for added realism
+• Added a timecycle modifier to reduce light pollution near the docks
+• Added parallax decals which add depth to various collision surfaces such as metal, wood, concrete, sand etc.
+• Added parallax interiors to a few buildings located at Strawberry Avenue and outside the 'Ten Cent Theater' on Sinner Street. This feature will be added to more locations in the future
+• Added parallax roads outside the 'Ten Cent Theater' on Sinner Street (Alpha Test) - These are currently only available for Platinum Supporters
+• Further improved the transparency of rain drops under light sources
+• Further improved lightning strike size and intensity
+• Removed the "4K Thunder Strikes" add-on as it's no longer necessary
+• Grand Opening - added the 'Bahama Mamas West' interior with lights, music, ped scenarios and various animations
+• Increased overall global saturation by six percent
+• Added RageMP and altV support to the Optional Add-Ons folder
+• Added multiple intensity options for the "Enhanced Motion Blur" add-on
+• Modified the "Remove All Trash" add-on to remove leaves and leftover trash from roads and sidewalks
+• Fixed a bug in FiveM, altV and RageMP where certain textures were missing after enabling MP maps
+• Fixed a bug regarding intense reflection lods in the Alamo Sea at night time
+• Presets added to Color Correction via 'NVE_ColorConfig.fx' which is located in the enbseries folder. You can switch presets by changing the numeric value in ENB.
+• LUT size is now automatic and SMAA is higher quality
+• All UI items under enbeffectpostpass.fx have been changed to appear cleaner and easier to use 
+• Added a hidden easter egg in the Blaine County countryside. Hint: Time to get dark. Find the light
+• Reduced SSAO / SSIL resolution by half in the Medium ENB preset for a performance boost
+• Misc. adjustments and tweaks
+</pre>
+				
+				<h4>June 8th, 2020</h4>
+<pre>
+• Improved rain visibility and transparency under light sources
+• Improved lightning strike intensity
+• Improved volumetric light radius at the lighthouse in Blaine County
+• Added new textures with parallaxing to Franklin's house in Vinewood Hills
+• Fixed a bug regarding low ambient light inside Franklin's house in Vinewood Hills
+• Added parallaxing to the Richards Majestic Studio / Backlot City area
+• Improved parallaxing at the Vinewood Cemetery
+• Fixed a bug causing intense water reflections at night time when flying at high altitudes near Lake Vinewood
+• Improved billboard and light flickering issues around the Vinewood area
+• Fixed an issue with sharp lights outside Michael's house at night
+• Fixed an exposure bug in Rainy weather between 4:50am to 5:30am
+• Fixed a bug where vehicle reflections would turn orange at 6am near the port in Los Santos
+• Reduced the intensity of volumetric lights outside the warehouse used in the "By the Book" mission
+• Added a new 'Max Intensity' setting for the 'Brighter Emergency Lights' add-on in the FiveM Pack
+• Fixed an issue where the Arcadius Business Center did not display proper reflections in FiveM
+• Added the PROCOBJ_NETWORK_GAME flag to each item witin procedural.meta in order to prevent multiplayer bugs
+• Removed the Doppler Cinema building model from the FiveM archive to prevent it from conflicting with a custom interior model used online
+• Resolved an issue where certain timecycle modifiers were not loading in FiveM—thus eliminating various bugs around the map
+• Fixed ENB tonemapping for Smog weather and Foggy weather in FiveM
+• Improved sharpening and dithering effect in ENB
+• Added Depth Mask green screen effect to ENB
+• Added Letterboxing, Film Grain and Bleach Bypass effect to ENB
+• Improved ENB performance in Medium and Low presets
+</pre>
+				
+				<h4>May 25th, 2020</h4>
+<pre>
+• Improved Foggy weather during night time in Los Santos
+• Improved vehicle headlight dipped beam and default beam light angles
+• Added new parallaxing to the Portola Drive area
+• Added new parallaxing to the Ten Cent Theater building 
+• Added Color Grading with LUT loading to ENB
+• Fixed reflection lods for the Arcadius Business Center
+• Fixed a bug where the natural ambient multiplier was decreased near the port 
+• Fixed a bug with FiveM Optional Add-ons not loading properly. Now they should all work
+• Fixed a bug in FiveM and Single Player related to tonemap artifacting around the Sun position when using the "Brighter Emergency Lights" add-on
+• Fixed a bug in FiveM that would cause wet sound effects and rain to be heard in interior and exterior locations
+• Removed the modified Maibatsu Motors building model from the FiveM archive to prevent it from conflicting with a custom interior model used online
+• Fixed a bug in FiveM that prevented modded burnout smoke from working
+• Fixed a bug where Police lights would turn pink or blue while driving on dirt
+• Fixed a bug that would cause the pavement textures near Portola Drive to appear corrupted if MP Maps is enabled through a trainer
+• Fixed a bug that caused flickering inside Michael's house
+• Fixed a bug where lighting was overexposed in the "Grass Roots" mission series
+• Fixed a bug that caused Thunder strikes to appear extremely bright in Los Santos at night
+• Separated carcols.ymt as its own Optional Add-on in FiveM so that users may remove it and replace it with their own carcols file if needed
+• Added multiple intensity options for the "Brighter Emergency Lights" add-on for FiveM
+• Updated the README file with extra information to help users
+</pre>
+
+				<h4>May 15th, 2020</h4>
+<pre>
+• Initial early access release</pre>
+		</div>
+
+		<button title="Click to show/hide content" type="button" onclick="if(document.getElementById('hidden') .style.display=='none') {document.getElementById('hidden') .style.display=''}else{document.getElementById('hidden') .style.display='none'}"><b>View Previous Change Logs</b></button>
+		<br />
+
+<h2 class="heading">Instructions</h2>
+<hr size="4" color="#000000">
+
+<pre>1. Open the "<b>Main Package</b>" folder located within the "<b>FiveM NVE Pack</b>" folder. Copy the "<b>mods</b>" folder from inside.</pre>
+
+<pre>2. Go to your "<b>FiveM Application Data</b>" folder. 
+
+The default location is "<i>C:\Users\YOURNAME\AppData\Local\FiveM\FiveM Application Data</i>"
+
+To go there, you can hold the "Windows Key + R" buttons on your keyboard to bring up the Run menu
+
+Then type %localappdata% and press OK
+
+<img src="https://i.imgur.com/HkrD7PS.png">
+</pre>
+
+<pre>3. Paste the "<b>mods</b>" folder you copied earlier. Replace all files if necessary.</pre>
+
+<pre><a href="https://i.imgur.com/Ec7ftAX.png" target="_blank"><img src="https://i.imgur.com/Ec7ftAX.png" width="181" height="160"><br /><i><font size="2"><b>Click Image To Expand</font></i></b></a></pre>
+
+<pre>4. Go back to the "<b>FiveM NVE Pack</b>" folder and click the "<b>Optional Add-Ons</b>" folder. If you want to install something from the "<b>Optional Add-Ons</b>" folder then just copy and paste the .rpf file(s) to the FiveM "mods" folder within the "<b>FiveM Application Data</b>" folder.</pre>
+
+<pre><a href="https://i.imgur.com/MCocqWl.png" target="_blank"><img src="https://i.imgur.com/MCocqWl.png" width="260" height="106"><br /><i><font size="2"><b>Click Image To Expand</font></i></b></a>
+</pre>
+
+<pre>5. Go back to the "<b>FiveM NVE Pack</b>" folder and click on the folder labeled "<b>ENB (Required)</b>" and open it.</pre>
+		
+<pre><img src="https://i.imgur.com/ChSOHwl.png" width="469" height="72"><i><font size="2"><b></font></i></b></a></pre>
+		
+<pre>Select a preset of your choice and open the folder.
+
+Copy all of the files from inside and <b>paste</b> them into your main GTAV folder
+		
+Steam Version: <i>C:\Program Files (x86)\Steam\SteamApps\common\Grand Theft Auto V</i>
+
+Social Club Version: <i>C:\Program Files\Rockstar Games\Grand Theft Auto V</i>
+
+Epic Games Version: <i>C:\Program Files (x86)\Epic Games\GTAV</i></pre>
+
+<pre>Make sure you paste all files and folders into the <b>main</b> GTAV folder.</pre>
+	
+<pre><a href="https://i.imgur.com/CEz8vp7.png" target="_blank"><img src="https://i.imgur.com/CEz8vp7.png" width="333" height="232"><br /><i><font size="2"><b>Click Image To Expand</font></i></b></a></pre>
+		
+<pre><b>Done! Now you can play FiveM with the NVE mod.</b></pre>
+
+<pre><b>NOTE:</b>
+If you are playing on a server with a <b>custom map</b> then you should delete "<b>b_NVE_Vanilla_Map.rpf</b>" and "<b>e_NVE_New_Street_Lights.rpf</b>" from your FiveM 'mods' folder. Otherwise you may experience floating objects.</pre>
+
+<pre>Keep in mind that NVE was created for the <b>Los Santos</b> and <b>Blaine County</b> areas.</pre>
+</font>
+<br />
+
+<div class="thankyoubox">
+<center><h2>We're done installing the NaturalVision Evolved mod for FiveM!<br />
+Before starting your game, please read below for additional information.</h2></center>
+</div>
+<br />
+
+<h2 class="heading">ENB Tips and More</h2>
+<hr size="4" color="#000000">
+<h3>Tip #1:</h3> 
+<pre>
+<b>You can open the ENB menu by pressing "<font color="#0078ff">Left Shift + Enter</font>" at the same time while in-game.
+
+You can take screenshots with ENB by using the "<font color="#d60202">Print Screen</font>" button. They will save in your GTAV game folder.</b>
+</pre>
+
+<hr class="style1">
+<h3>Tip #2:</h3> 
+<p><pre>You must have your in-game GTAV <b>PostFX</b> and <b>Particles Quality</b> settings on "<b>Very High</b>" or "<b>Ultra</b>" in order for all of the shaders and effects included in this package to work properly. 
+
+You must have your <b>Texture Quality</b> settings on "Normal" for textures to work properly.</pre>
+<pre><a href="https://i.imgur.com/Xhk70MJ.png" target="_blank"><img src="https://i.imgur.com/Xhk70MJ.png" width="554" height="100"></a></pre>
+
+<p><pre>You must have your in-game GTAV <b>Shader Quality</b> settings on "<b>Very High</b>" in order for all of the ENB shaders included in this package to work properly.</pre>
+
+<pre><a href="https://i.imgur.com/aVNZvpS.png" target="_blank"><img src="https://i.imgur.com/aVNZvpS.png" width="574" height="85"></a></pre>
+
+<pre>Make sure you enable "<b>Extended Distance Scaling</b>" and turn up the slider within the <b>Advanced Graphics</b> settings tab</pre>
+
+<hr class="style1">
+<h3>Tip #3:</h3> 
+<p><pre>You must have <b>DirectX</b> set to "<b>DirectX 11</b>" under the "<b>Graphics"</b> settings tab.</pre>
+		
+<hr class="style1">
+<h3>Tip #4:</h3> 
+<p><pre>You can enable or disable the ENB shaders by going into the ENB menu, clicking "<b>Show Shaders</b>" on the top and then clicking "<b>enbeffect.fx</b>", "<b>enbeffectpostpass.fx</b>" or "<b>enbdepthoffield.fx</b>". 
+
+Doing this will bring up several options where you can tick or untick a box, as well as adjust the variables.
+
+Once you are done configuring your ENB settings, click "<b>Save Configuration</b>" on the upper-left corner of your screen.</pre>
+<pre><a href="https://i.imgur.com/C1t2FBX.png" target="_blank"><img src="https://i.imgur.com/C1t2FBX.png" width="596" height="497"></a></pre>
+<hr class="style1">
+<h3>Tip #5:</h3>
+<p><pre>Enable the "<b>Extended Texture Budget</b>" setting and turn it all the way up in FiveM in order to prevent distant textures from disappearing.</pre>
+<pre><a href="https://i.imgur.com/XBWMrKz.png" target="_blank"><img src="https://i.imgur.com/XBWMrKz.png" width="616" height="347"></a></pre>
+<br />
+
+<font size="4">
+<h2 class="heading">Discord Server</h2>
+<hr size="4" color="#000000">
+
+Join this Discord server if you need support or want to chat with other modders:
+<br />
+<br />
+<b>
+<a href="https://discord.gg/qQtJMgx">Discord.me/GTAMods</a></b>
+<br />
+<br />
+<h2 class="heading">Credits</h2>
+<hr size="4" color="#000000">
+
+<a href="https://www.rockstargames.com/">Rockstar Games</a> & <a href="http://www.rockstarnorth.com/">Rockstar North</a><br />
+<a href="http://openiv.com">OpenIV Team</a> (<a href="https://twitter.com/goodnts">GooD-NTS</a>)<br />
+<a href="https://www.gta5-mods.com/users/dexyfex">CodeWalker Dev</a> (<a href="https://www.patreon.com/dexyfex">dexyfex</a>)<br />
+<a href="http://enbdev.com/index_en.html">ENB Dev</a> (<a href="https://www.facebook.com/pages/ENBSeries/195568980543827">Boris Vorontsov</a>)<br />
+<a href="https://www.gta5-mods.com/misc/visualv">VisualV Team</a> (<a href="https://www.gta5-mods.com/users/_CP_">_CP_ & robi29</a>)<br />
+
+<style>
+gl {
+	text-shadow: 0 0 4px #f8d800;
+}
+</style>
+
+<h2><u>Special Thanks</u></h2>
+<a href="https://www.youtube.com/user/IceVip1337"><gl><font color="#080469">IceVIP</a></font></gl>  &#10026;
+<br />
+<a href="https://youtube.com/user/knife7331"><gl><font color="#080469">cherry</a></font></gl>  &#10026;
+<br />
+<a href="https://www.youtube.com/channel/UClVx50foIM52OydwZw4rYKg/videos"><gl><font color="#080469">Robin</a></font></gl>  &#10026;
+<br />
+<a href="https://www.facebook.com/icenhancer"><gl><font color="#080469">icelaglace</a></font></gl>  &#10026;
+<br />
+<a href="https://www.twitch.tv/mat42k"><gl><font color="#080469">MADZ</a></font></gl>  &#10026;
+<br />
+<a href="https://bouaggadnabil.wixsite.com/nbdesign"><gl><font color="#080469">NBdesign</a></font></gl>  &#10026;
+<br />
+<a href="https://www.youtube.com/channel/UCEK1wbgvbyzpJW0l6dzctOA"><gl><font color="#080469">Modifiver</a></font></gl>  &#10026;
+<br />
+<a href="https://www.gta5-mods.com/users/Vans123"><gl><font color="#080469">vans123</a></font></gl>  &#10026;
+<br />
+<a href="https://www.gta5-mods.com/users/Reyser"><gl><font color="#080469">Reyser</a></font></gl>  &#10026;
+<br />
+<a href="https://steamcommunity.com/id/anneology"><gl><font color="#080469">Anne</a>  &#10026; <br />
+<a href="https://www.youtube.com/channel/UCj38DYVq4_PGjhKbmTpCDKA/videos"><gl><font color="#080469">Elmax</a></font></gl>  &#10026;
+<br />
+<a href="https://twitter.com/ilmagz1n"><gl><font color="#080469">Frazzlee</a></gl></font> &#10026; 
+<br />
+<a href="http://steamcommunity.com/profiles/76561198064176737/"><gl><font color="#080469">𝔡𝔬𝔱𝔟𝔬𝔶</a>  &#10026; <br />
+<a href="https://www.flickr.com/photos/151693362@N04/">Stelassin</a><br />
+<a href="https://www.gta5-mods.com/users/ShakeZone">ShakeZone</a><br />
+<a href="https://www.gta5-mods.com/users/Neos7">Neos7</a><br />
+<a href="https://instagram.com/sander.oudejans">Sander Oudejans</a><br />
+
+</font>
+<br />
+<br />
+
+<hr size="4" color="#000000">
+
+
+<img src="http://www.clustrmaps.com/map_v2.png?d=IMb0coyeqzgIo6_CGE6mlMcBk7ct4I04tchWvJmg8VM&cl=ffffff" width="0" height="0"></a>
+
+<script src="http://w.soundcloud.com/player/api.js"></script>
+<script>
+   $(document).ready(function() {
+	 var widget = SC.Widget(document.getElementById('soundcloud_widget'));
+	 widget.bind(SC.Widget.Events.READY, function() {
+	   console.log('Ready...');
+	 });
+	 widget.toggle();
+	 $('button').click(function() {
+	   widget.toggle();
+	 });
+   });
+   
+ </script>
+
+<iframe id="soundcloud_widget" width="0%" height="0" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1047424750&amp;color=00cc11&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+<script>document.getElementById('scbutton').click();</script>
+
+
+</font>
+</div>
+<center>
+<h2>END</h2>
+<img src="http://cdn.sc.rockstargames.com/ext/n/img/char/char_niko.png">
+<img src="http://cdn.sc.rockstargames.com/ext/n/img/char/char_trev.png">
+<img src="http://cdn.sc.rockstargames.com/ext/n/img/char/char_mike.png">
+<img src="http://cdn.sc.rockstargames.com/ext/n/img/char/char_frank.png"></center>
+</body>
+</html>
